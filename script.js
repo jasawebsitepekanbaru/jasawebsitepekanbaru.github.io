@@ -39,25 +39,34 @@ backToTopButton.addEventListener("click", () => {
 });
 
 // Form submission
-const contactForm = document.getElementById("contact-form");
 
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah form untuk mengirimkan secara normal
 
-  // Get form values
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const service = document.getElementById("service").value;
-  const message = document.getElementById("message").value;
+    // Mengambil data dari form
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value;
 
-  // Here you would typically send the data to your server
-  // For this example, we'll just show an alert
-  alert(
-    `Thank you, ${name}! We've received your message about ${
-      service || "our services"
-    }. We'll contact you at ${email} soon.`
-  );
+    // Membuat pesan yang akan dikirimkan ke WhatsApp
+    const whatsappMessage = `
+      *Pesan Kontak Website*
+      
+      *Nama:* ${name}
+      *Email:* ${email}
+      *Layanan yang Tertarik:* ${service}
+      *Pesan:* ${message}
+    `;
 
-  // Reset form
-  contactForm.reset();
-});
+    // Encoding pesan untuk URL
+    const encodedMessage = encodeURIComponent(whatsappMessage.trim());
+
+    // Membuat URL WhatsApp
+    const whatsappURL = `https://wa.me/6281365036634?text=${encodedMessage}`;
+
+    // Mengarahkan pengguna ke WhatsApp
+    window.open(whatsappURL, "_blank");
+  });
