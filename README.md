@@ -25,7 +25,7 @@ Kami menyediakan berbagai layanan seperti:
 Jika Anda tertarik untuk bekerja sama atau ingin konsultasi mengenai layanan kami, jangan ragu untuk menghubungi kami melalui:
 
 - **WhatsApp**: [Klik di sini untuk menghubungi kami di WhatsApp](https://wa.me/6281365036634)
-- **Email**: info@jasawebsitepekanbaru.com
+- **Email**: riauwebhost@gmail.com
 
 ## Keywords
 
